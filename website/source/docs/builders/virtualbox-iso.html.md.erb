@@ -80,7 +80,10 @@ builder.
     URL or a file URL (or path to a file). If this is an HTTP URL, Packer will
     download it and cache it between runs. `iso_url` is required unless
     `iso_urls` is set in its place (see below for documentation on the
-    `iso_urls` option)
+    `iso_urls` option).
+    Packer uses hashicorp/go-getter in order to perform a download.
+    You can read more on how to use the go getter on its github URL: 
+    [hashicorp/go-getter](https://github.com/hashicorp/go-getter).
 
 ### Optional:
 
