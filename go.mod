@@ -23,13 +23,13 @@ require (
 	github.com/armon/go-metrics v0.0.0-20180713145231-3c58d8115a78 // indirect
 	github.com/armon/go-radix v0.0.0-20160115234725-4239b77079c7 // indirect
 	github.com/asaskevich/govalidator v0.0.0-20180720115003-f9ffefc3facf // indirect
-	github.com/aws/aws-sdk-go v1.15.54
+	github.com/aws/aws-sdk-go v1.15.78
 	github.com/bgentry/speakeasy v0.0.0-20150902231413-36e9cfdd6909 // indirect
 	github.com/biogo/hts v0.0.0-20160420073057-50da7d4131a3
 	github.com/bitly/go-hostpool v0.0.0-20171023180738-a3a6125de932 // indirect
 	github.com/bmizerany/assert v0.0.0-20160611221934-b7ed37b82869 // indirect
 	github.com/cenkalti/backoff v2.1.0+incompatible // indirect
-	github.com/cheggaaa/pb v1.0.26
+	github.com/cheggaaa/pb v2.0.6+incompatible
 	github.com/circonus-labs/circonus-gometrics v2.2.5+incompatible // indirect
 	github.com/circonus-labs/circonusllhist v0.1.3 // indirect
 	github.com/containerd/continuity v0.0.0-20181203112020-004b46473808 // indirect
@@ -47,13 +47,13 @@ require (
 	github.com/dylanmei/iso8601 v0.1.0 // indirect
 	github.com/dylanmei/winrmtest v0.0.0-20170819153634-c2fbb09e6c08
 	github.com/elazarl/go-bindata-assetfs v1.0.0 // indirect
-	github.com/fatih/color v1.7.0 // indirect
 	github.com/fatih/structs v1.1.0 // indirect
 	github.com/go-ini/ini v1.25.4
 	github.com/go-ldap/ldap v2.5.1+incompatible // indirect
 	github.com/go-sql-driver/mysql v1.4.1 // indirect
 	github.com/go-test/deep v1.0.1 // indirect
 	github.com/gocql/gocql v0.0.0-20181124151448-70385f88b28b // indirect
+	github.com/gofrs/flock v0.7.0
 	github.com/gogo/protobuf v1.2.0 // indirect
 	github.com/golang/snappy v0.0.0-20180518054509-2e65f85255db // indirect
 	github.com/google/go-cmp v0.0.0-20180328201512-5411ab924f9f
@@ -69,7 +69,8 @@ require (
 	github.com/hashicorp/consul v0.0.0-20180807174550-3e6313bebbf0
 	github.com/hashicorp/errwrap v0.0.0-20141028054710-7554cd9344ce
 	github.com/hashicorp/go-checkpoint v0.0.0-20171009173528-1545e56e46de
-	github.com/hashicorp/go-cleanhttp v0.0.0-20160217214820-875fb671b3dd
+	github.com/hashicorp/go-cleanhttp v0.5.0
+	github.com/hashicorp/go-getter v0.0.0-20190108191537-fd95e62a2c5c
 	github.com/hashicorp/go-hclog v0.0.0-20181001195459-61d530d6c27f // indirect
 	github.com/hashicorp/go-immutable-radix v0.0.0-20180129170900-7f3cd4390caa // indirect
 	github.com/hashicorp/go-memdb v0.0.0-20181108192425-032f93b25bec // indirect
@@ -81,7 +82,7 @@ require (
 	github.com/hashicorp/go-rootcerts v0.0.0-20160503143440-6bb64b370b90 // indirect
 	github.com/hashicorp/go-sockaddr v0.0.0-20180320115054-6d291a969b86 // indirect
 	github.com/hashicorp/go-uuid v0.0.0-20160329185618-73d19cdc2bf0
-	github.com/hashicorp/go-version v0.0.0-20160119211326-7e3c02b30806
+	github.com/hashicorp/go-version v1.0.0
 	github.com/hashicorp/golang-lru v0.0.0-20180201235237-0fb14efe8c47 // indirect
 	github.com/hashicorp/hcl v0.0.0-20180404174102-ef8a98b0bbce // indirect
 	github.com/hashicorp/memberlist v0.1.0 // indirect
@@ -107,15 +108,11 @@ require (
 	github.com/masterzen/azure-sdk-for-go v0.0.0-20161014135628-ee4f0065d00c // indirect
 	github.com/masterzen/simplexml v0.0.0-20140219194429-95ba30457eb1 // indirect
 	github.com/masterzen/winrm v0.0.0-20180224160350-7e40f93ae939
-	github.com/mattn/go-colorable v0.0.9 // indirect
-	github.com/mattn/go-isatty v0.0.0-20151211000621-56b76bdf51f7 // indirect
 	github.com/mattn/go-runewidth v0.0.0-20170510074858-97311d9f7767 // indirect
 	github.com/miekg/dns v1.1.1 // indirect
 	github.com/mitchellh/cli v0.0.0-20170908181043-65fcae5817c8
 	github.com/mitchellh/copystructure v1.0.0 // indirect
 	github.com/mitchellh/go-fs v0.0.0-20180402234041-7b48fa161ea7
-	github.com/mitchellh/go-homedir v0.0.0-20151025052427-d682a8f0cf13 // indirect
-	github.com/mitchellh/go-testing-interface v1.0.0 // indirect
 	github.com/mitchellh/go-vnc v0.0.0-20150629162542-723ed9867aed
 	github.com/mitchellh/iochan v0.0.0-20150529224432-87b45ffd0e95
 	github.com/mitchellh/mapstructure v0.0.0-20180111000720-b4575eea38cc
@@ -139,7 +136,7 @@ require (
 	github.com/patrickmn/go-cache v2.1.0+incompatible // indirect
 	github.com/pierrec/lz4 v0.0.0-20160112163551-383c0d87b5dd
 	github.com/pierrec/xxHash v0.0.0-20160112165351-5a004441f897 // indirect
-	github.com/pkg/errors v0.0.0-20171216070316-e881fd58d78e // indirect
+	github.com/pkg/errors v0.0.0-20171216070316-e881fd58d78e
 	github.com/pkg/sftp v0.0.0-20160118190721-e84cc8c755ca
 	github.com/posener/complete v0.0.0-20170908125245-88e59760adad
 	github.com/profitbricks/profitbricks-sdk-go v4.0.2+incompatible
@@ -158,20 +155,19 @@ require (
 	github.com/tent/http-link-go v0.0.0-20130702225549-ac974c61c2f9 // indirect
 	github.com/tv42/httpunix v0.0.0-20150427012821-b75d8614f926 // indirect
 	github.com/ugorji/go v0.0.0-20151218193438-646ae4a518c1
-	github.com/ulikunitz/xz v0.0.0-20180703112113-636d36a76670
+	github.com/ulikunitz/xz v0.5.5
 	github.com/vmware/govmomi v0.0.0-20170707011325-c2105a174311
 	github.com/xanzy/go-cloudstack v2.1.4+incompatible
 	golang.org/x/crypto v0.0.0-20180322175230-88942b9c40a4
 	golang.org/x/net v0.0.0-20181201002055-351d144fa1fc
 	golang.org/x/oauth2 v0.0.0-20180821212333-d2e6202438be
 	golang.org/x/sync v0.0.0-20181108010431-42b317875d0f
-	golang.org/x/sys v0.0.0-20180909124046-d0be0721c37e
+	golang.org/x/sys v0.0.0-20181213200352-4d1cda033e06
 	golang.org/x/time v0.0.0-20180412165947-fbb02b2291d2 // indirect
 	google.golang.org/api v0.0.0-20180818000503-e21acd801f91
 	google.golang.org/grpc v1.17.0 // indirect
 	gopkg.in/airbrake/gobrake.v2 v2.0.9 // indirect
 	gopkg.in/asn1-ber.v1 v1.0.0-20181015200546-f715ec2f112d // indirect
-	gopkg.in/cheggaaa/pb.v1 v1.0.27 // indirect
 	gopkg.in/gemnasium/logrus-airbrake-hook.v2 v2.1.2 // indirect
 	gopkg.in/h2non/gock.v1 v1.0.12 // indirect
 	gopkg.in/jarcoal/httpmock.v1 v1.0.0-20181117152235-275e9df93516 // indirect
