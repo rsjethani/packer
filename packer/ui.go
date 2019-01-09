@@ -16,7 +16,7 @@ import (
 	"time"
 	"unicode"
 
-	"github.com/hashicorp/go-getter"
+	getter "github.com/hashicorp/go-getter"
 )
 
 type UiColor uint
@@ -43,7 +43,7 @@ type Ui interface {
 }
 
 type NoopUi struct {
-	getter.NoopProgressListener
+	NoopProgressTracker
 }
 
 var _ Ui = new(NoopUi)
@@ -282,7 +282,7 @@ func (rw *BasicUi) Machine(t string, args ...string) {
 // to the given Writer.
 type MachineReadableUi struct {
 	Writer io.Writer
-	getter.NoopProgressListener
+	NoopProgressTracker
 }
 
 var _ Ui = new(MachineReadableUi)
