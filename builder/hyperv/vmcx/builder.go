@@ -391,7 +391,7 @@ func (b *Builder) Run(ui packer.Ui, hook packer.Hook) (packer.Artifact, error) {
 		&hypervcommon.StepCreateBuildDir{
 			TempPath: b.config.TempPath,
 		},
-		&hypervcommon.StepOutputDir{
+		&common.StepOutputDir{
 			Force: b.config.PackerForce,
 			Path:  b.config.OutputDir,
 		},

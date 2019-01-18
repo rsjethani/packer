@@ -20,6 +20,7 @@ import (
 	"github.com/hashicorp/packer/command"
 	"github.com/hashicorp/packer/packer"
 	"github.com/hashicorp/packer/packer/plugin"
+	"github.com/hashicorp/packer/packer/tmp"
 	"github.com/hashicorp/packer/version"
 	"github.com/mitchellh/cli"
 	"github.com/mitchellh/panicwrap"
@@ -68,7 +69,7 @@ func realMain() int {
 
 		// We always send logs to a temporary file that we use in case
 		// there is a panic. Otherwise, we delete it.
-		logTempFile, err := ioutil.TempFile("", "packer-log")
+		logTempFile, err := tmp.File("packer-log")
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "Couldn't setup logging tempfile: %s", err)
 			return 1

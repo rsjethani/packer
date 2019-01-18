@@ -49,7 +49,7 @@ func (b *Builder) Run(ui packer.Ui, hook packer.Hook) (packer.Artifact, error) {
 
 	// Build the steps.
 	steps := []multistep.Step{
-		&vboxcommon.StepOutputDir{
+		&common.StepOutputDir{
 			Force: b.config.PackerForce,
 			Path:  b.config.OutputDir,
 		},
