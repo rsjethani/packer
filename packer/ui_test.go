@@ -39,7 +39,7 @@ func testUi() *BasicUi {
 
 func TestColoredUi(t *testing.T) {
 	bufferUi := testUi()
-	ui := &ColoredUi{UiColorYellow, UiColorRed, bufferUi}
+	ui := &ColoredUi{UiColorYellow, UiColorRed, bufferUi, defaultUiProgressBar}
 
 	if !ui.supportsColors() {
 		t.Skip("skipping for ui without color support")

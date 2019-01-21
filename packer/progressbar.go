@@ -13,7 +13,7 @@ func ProgressBarConfig(bar *pb.ProgressBar, prefix string) {
 	bar.Prefix(prefix)
 }
 
-var defaultUiProgressBar = uiProgressBar{}
+var defaultUiProgressBar = &uiProgressBar{}
 
 // uiProgressBar is a self managed progress bar singleton.
 // decorate your struct with a *uiProgressBar to
