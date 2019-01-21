@@ -8,9 +8,8 @@ import (
 	"log"
 
 	"github.com/gofrs/flock"
-	"github.com/hashicorp/go-getter"
+	getter "github.com/hashicorp/go-getter"
 	urlhelper "github.com/hashicorp/go-getter/helper/url"
-
 	"github.com/hashicorp/packer/helper/multistep"
 	"github.com/hashicorp/packer/packer"
 )
