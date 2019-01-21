@@ -37,64 +37,6 @@ func TestChooseString(t *testing.T) {
 	}
 }
 
-func TestValidatedURL(t *testing.T) {
-	// Invalid URL: has hex code in host
-	_, err := ValidatedURL("http://what%20.com")
-	if err == nil {
-		t.Fatalf("expected err : %s", err)
-	}
-
-	// Invalid: unsupported scheme
-	_, err = ValidatedURL("ftp://host.com/path")
-	if err == nil {
-		t.Fatalf("expected err : %s", err)
-	}
-
-	// Valid: http
-	u, err := ValidatedURL("HTTP://packer.io/path")
-	if err != nil {
-		t.Fatalf("err: %s", err)
-	}
-
-	if u != "http://packer.io/path" {
-		t.Fatalf("bad: %s", u)
-	}
-
-	cases := []struct {
-		InputString string
-		OutputURL   string
-		ErrExpected bool
-	}{
-		// Invalid URL: has hex code in host
-		{"http://what%20.com", "", true},
-		// Valid: http
-		{"HTTP://packer.io/path", "http://packer.io/path", false},
-		// No path
-		{"HTTP://packer.io", "http://packer.io", false},
-		// Invalid: unsupported scheme
-		{"ftp://host.com/path", "", true},
-	}
-
-	for _, tc := range cases {
-		u, err := ValidatedURL(tc.InputString)
-		if u != tc.OutputURL {
-			t.Fatal(fmt.Sprintf("Error with URL %s: got %s but expected %s",
-				tc.InputString, tc.OutputURL, u))
-		}
-		if (err != nil) != tc.ErrExpected {
-			if tc.ErrExpected == true {
-				t.Fatal(fmt.Sprintf("Error with URL %s: we expected "+
-					"ValidatedURL to return an error but didn't get one.",
-					tc.InputString))
-			} else {
-				t.Fatal(fmt.Sprintf("Error with URL %s: we did not expect an "+
-					" error from ValidatedURL but we got: %s",
-					tc.InputString, err))
-			}
-		}
-	}
-}
-
 func GetNativePathToTestFixtures(t *testing.T) string {
 	const path = "./test-fixtures"
 	res, err := filepath.Abs(path)
@@ -281,32 +223,6 @@ func TestDownloadableURL_FilePaths(t *testing.T) {
 			strings.Replace(tfPath, `\`, `/`, -1))
 		if u != expected {
 			t.Fatalf("unexpected: %s != %s", u, expected)
-		}
-	}
-}
-
-func TestFileExistsLocally(t *testing.T) {
-	portablepath := GetPortablePathToTestFixtures(t)
-
-	dirCases := []struct {
-		Input  string
-		Output bool
-	}{
-		// file exists locally
-		{fmt.Sprintf("file://%s/SomeDir/myfile.txt", portablepath), true},
-		// remote protocols short-circuit and are considered to exist locally
-		{"https://myfile.iso", true},
-		// non-existent protocols do not exist and hence fail
-		{"nonexistent-protocol://myfile.iso", false},
-		// file does not exist locally
-		{"file:///C/i/dont/exist", false},
-	}
-	// Run through test cases to make sure they all parse correctly
-	for _, tc := range dirCases {
-		fileOK := FileExistsLocally(tc.Input)
-		if fileOK != tc.Output {
-			t.Fatalf("Test Case failed: Expected %#v, received = %#v, input = %s",
-				tc.Output, fileOK, tc.Input)
 		}
 	}
 }
