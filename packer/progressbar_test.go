@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cheggaaa/pb"
+	pb "github.com/cheggaaa/pb"
 	"golang.org/x/sync/errgroup"
 )
 
