@@ -17,7 +17,7 @@ func speedyProgressBar(bar *pb.ProgressBar) {
 	bar.Format("[\x00=\x00>\x00-\x00]")
 }
 func TestProgressTracking_races(t *testing.T) {
-	bar := defaultUiProgressBar
+	var bar *uiProgressBar
 	g := errgroup.Group{}
 	txt := []byte("foobarbaz dolores")
 	b := bytes.NewReader(txt)
