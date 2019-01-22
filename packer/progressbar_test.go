@@ -19,16 +19,15 @@ func speedyProgressBar(bar *pb.ProgressBar) {
 func TestProgressTracking_races(t *testing.T) {
 	var bar *uiProgressBar
 	g := errgroup.Group{}
-	txt := []byte("foobarbaz dolores")
-	b := bytes.NewReader(txt)
 
 	for i := 0; i < 100; i++ {
 		g.Go(func() error {
+			txt := []byte("foobarbaz dolores")
+			b := bytes.NewReader(txt)
 			tracker := bar.TrackProgress("file,", 1, 42, ioutil.NopCloser(b))
 
-			b := []byte("i")
 			for i := 0; i < 42; i++ {
-				tracker.Read(b)
+				tracker.Read([]byte("i"))
 			}
 			return nil
 		})
