@@ -76,7 +76,7 @@ builder.
 
     -   `iso_url` (string) - A URL to the ISO containing the installation image or
     virtual hard drive (VHD or VHDX) file to clone. 
-    Packer uses hashicorp/go-getter inn order to perform a download.
+    Packer uses hashicorp/go-getter in file mode in order to perform a download.
     See usage of [hashicorp/go-getter](https://github.com/hashicorp/go-getter).
 
 ### Optional:
@@ -196,7 +196,7 @@ builder.
     All URLs must point to the same file (same checksum). By default this is
     empty and `iso_url` is used. Only one of `iso_url` or `iso_urls` can be
     specified.
-    Packer uses hashicorp/go-getter inn order to perform a download.
+    Packer uses hashicorp/go-getter in file mode in order to perform a download.
     See usage of [hashicorp/go-getter](https://github.com/hashicorp/go-getter).
 
 -   `mac_address` (string) - This allows a specific MAC address to be used on

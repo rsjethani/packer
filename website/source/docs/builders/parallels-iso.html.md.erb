@@ -82,7 +82,7 @@ builder.
     This URL can be either an HTTP URL or a file URL (or path to a file).
     Packer will download it and cache it between runs. Local downloads will 
     be symlinks.
-    Packer uses hashicorp/go-getter inn order to perform a download.
+    Packer uses hashicorp/go-getter in file mode in order to perform a download.
     See usage of [hashicorp/go-getter](https://github.com/hashicorp/go-getter).
 
 -   `parallels_tools_flavor` (string) - The flavor of the Parallels Tools ISO to
@@ -178,7 +178,7 @@ builder.
     download or while downloading a single URL, it will move on to the next. All
     URLs must point to the same file (same checksum). By default this is empty
     and `iso_url` is used. Only one of `iso_url` or `iso_urls` can be specified.
-    Packer uses hashicorp/go-getter inn order to perform a download.
+    Packer uses hashicorp/go-getter in file mode in order to perform a download.
     See usage of [hashicorp/go-getter](https://github.com/hashicorp/go-getter).
 
 -   `memory` (number) - The amount of memory to use for building the VM in
